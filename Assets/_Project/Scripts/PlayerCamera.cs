@@ -10,12 +10,12 @@ public class PlayerCamera : MonoBehaviour
     {
       if(Input.GetButtonDown("LookBack"))
       {
-        transform.position = new Vector3(0f, 2f, 3f);
+        transform.localPosition = new Vector3(0f, 2f, 3f);
         transform.Rotate(0f, 180f, 0f, Space.Self);
       }
       if(Input.GetButtonUp("LookBack"))
       {
-        transform.position = new Vector3(0f, 2f, -5f);
+        transform.localPosition = new Vector3(0f, 2f, -4f);
         transform.Rotate(0f, 180f, 0f, Space.Self);
       }
     }
