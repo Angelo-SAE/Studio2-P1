@@ -15,6 +15,7 @@ public class DropOffPoint : MonoBehaviour
     if(IceCream.hasIceCream)
     {
       IceCream.iceCreamCount++;
+      IceCream.deliveryComplete = true;
       IceCream.hasIceCream = false;
       Destroy(gameObject);
     }

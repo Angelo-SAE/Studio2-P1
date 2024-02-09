@@ -12,10 +12,14 @@ public class ObstacleExplosion : MonoBehaviour
     private float countdown;
     private bool hasExploded = false;
 
+    private Rigidbody rb;
+
     void Start()
     {
         // Set a random countdown timer between minDelay and maxDelay
         countdown = Random.Range(minDelay, maxDelay);
+        rb = GetComponent<Rigidbody>();
+        rb.AddForce(Vector3.down * 500f, ForceMode.Impulse);
     }
 
     void Update()
@@ -37,11 +41,11 @@ public class ObstacleExplosion : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider nearbyObject in colliders)
         {
-            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-            if (rb != null && nearbyObject.CompareTag("Player")) // Ensure it affects only players
+            Rigidbody grb = nearbyObject.GetComponent<Rigidbody>();
+            if (grb != null && nearbyObject.CompareTag("Player")) // Ensure it affects only players
             {
                 // Apply explosion force
-                rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+                grb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
                 Debug.Log("EXPLOSION");
             }
         }

@@ -6,6 +6,7 @@ public class IceCream : MonoBehaviour
 {
     public static bool hasIceCream;
     public static int iceCreamCount;
+    public static bool deliveryComplete;
     public static Vector3 iceCreamPoint;
     public static Vector3 dropOffPoint;
 }

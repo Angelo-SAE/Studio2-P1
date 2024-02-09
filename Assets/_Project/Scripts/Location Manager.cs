@@ -22,15 +22,24 @@ public class LocationManager : MonoBehaviour
 
     void Start()
     {
-        
+
         InitializeLocations();
-        
+
         SetRandomLocations();
+    }
+
+    void Update()
+    {
+      if(IceCream.deliveryComplete)
+      {
+        OnDeliveryComplete();
+        IceCream.deliveryComplete = false;
+      }
     }
 
     void InitializeLocations()
     {
-        
+
         pickupLocations = new GameObject[pickupParent.transform.childCount];
         deliveryLocations = new GameObject[deliveryParent.transform.childCount];
 
@@ -51,18 +60,18 @@ public class LocationManager : MonoBehaviour
         if (currentIcecream != null) Destroy(currentIcecream);
         if (currentDelivery != null) Destroy(currentDelivery);
 
-        
+
         int pickupIndex = Random.Range(0, pickupLocations.Length);
         currentPickupLocation = pickupLocations[pickupIndex];
 
-        
+
         int deliveryIndex = Random.Range(0, deliveryLocations.Length);
         currentDeliveryLocation = deliveryLocations[deliveryIndex];
 
-        
+
         currentIcecream = Instantiate(icecreamPrefab, currentPickupLocation.transform.position, Quaternion.identity);
 
-        
+
         currentDelivery = Instantiate(deliveryPrefab, currentDeliveryLocation.transform.position, Quaternion.identity);
 
         Debug.Log($"New pickup location: {currentPickupLocation.name}, New delivery location: {currentDeliveryLocation.name}");
