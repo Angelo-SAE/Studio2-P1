@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
       RaycastHit hit;
       foreach(var wheel in wheels)
       {
-        if(Physics.Raycast(wheel.gameObject.transform.position, -wheel.gameObject.transform.up, 3f))
+        if(Physics.Raycast(wheel.gameObject.transform.position, -wheel.gameObject.transform.up, 5f))
         {
           Physics.Raycast(wheel.gameObject.transform.position, -wheel.gameObject.transform.up, out hit);
           rb.AddForce((hit.point - wheel.gameObject.transform.position) * magnetForce, ForceMode.Force);
