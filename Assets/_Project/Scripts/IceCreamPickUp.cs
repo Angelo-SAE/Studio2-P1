@@ -11,7 +11,10 @@ public class IceCreamPickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-      IceCream.hasIceCream = true;
-      Destroy(gameObject);
+      if(col.gameObject.CompareTag("Player"))
+      {
+        IceCream.hasIceCream = true;
+        Destroy(gameObject);
+      }
     }
 }
