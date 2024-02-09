@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ProBuilder;
 
 public class ObstacleGenerator : MonoBehaviour
 {
@@ -11,9 +12,15 @@ public class ObstacleGenerator : MonoBehaviour
     public float distanceBetweenCubes = 3f;
     public float pipeLength = 100f; // Set this to the length of your pipe
 
+    
+
+    public ProBuilderMesh pipe;
+
     void Start()
     {
         GenerateObstacles();
+        
+        
     }
 
     void GenerateObstacles()
