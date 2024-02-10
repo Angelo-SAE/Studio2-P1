@@ -22,8 +22,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-      Movement();
-      MagnetForce();
+      if(!TimeTracker.isDead)
+      {
+        Movement();
+        MagnetForce();
+      }
     }
 
     private void Movement()

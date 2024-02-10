@@ -5,6 +5,8 @@ using UnityEngine;
 public class DropOffPoint : MonoBehaviour
 {
 
+  [SerializeField] private float timeReduction;
+
   void Awake()
   {
     IceCream.dropOffPoint = transform.position;
@@ -12,10 +14,11 @@ public class DropOffPoint : MonoBehaviour
 
   private void OnTriggerEnter(Collider col)
   {
-    if(IceCream.hasIceCream)
+    if(IceCream.hasIceCream && col.gameObject.CompareTag("Player"))
     {
       IceCream.iceCreamCount++;
       IceCream.deliveryComplete = true;
+      TimeTracker.ReduceTime(timeReduction);
       IceCream.hasIceCream = false;
       Destroy(gameObject);
     }
