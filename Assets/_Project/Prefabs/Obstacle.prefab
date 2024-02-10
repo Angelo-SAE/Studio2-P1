@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbb29638834aeb4bbb24f25a6159691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 100000
+  explosionForce: 2000000
   explosionRadius: 25
   minDelay: 2
   maxDelay: 2.5
