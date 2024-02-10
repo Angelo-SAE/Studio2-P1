@@ -17,16 +17,28 @@ public class TimerCountDown : MonoBehaviour
     private void Counter()
     {
       time += Time.deltaTime;
-      if(time >= timerSpeed)
+      if(time >= timerSpeed/((IceCream.iceCreamCount/20f)+ 1f))
       {
         TimeTracker.currentTime += increaseAmount;
-        time = 0;
+        time = 0f;
+      }
+      if(TimeTracker.currentTime >= 100f)
+      {
+        TimeTracker.isDead = true;
       }
     }
 
     private void SetTimer()
     {
-      GetComponent<Image>().fillAmount = TimeTracker.currentTime/100;
+      GetComponent<Image>().fillAmount = TimeTracker.currentTime/100f;
+    }
+
+    public void Restart()
+    {
+      TimeTracker.currentTime = 0f;
+      TimeTracker.isDead = false;
+      IceCream.iceCreamCount = 0;
+      IceCream.hasIceCream = false;
     }
 
 }

@@ -6,6 +6,7 @@ public class ObstacleSpawner : MonoBehaviour
 {
     public GameObject player; // Assign the player GameObject in the Inspector
     public GameObject obstaclePrefab; // Assign your obstacle prefab in the Inspector
+    private GameObject bombHolder;
 
     public float spawnFrequency = 3.0f; // Time between spawns in seconds
     public Vector2 rectangleSize = new Vector2(10f, 5f); // Width and Depth of the spawn rectangle
@@ -14,6 +15,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void Start()
     {
+      bombHolder = new GameObject("BombHolder");
         StartCoroutine(SpawnObstacles());
     }
 
@@ -36,6 +38,6 @@ public class ObstacleSpawner : MonoBehaviour
         spawnPosition += new Vector3(Random.Range(-rectangleSize.x / 2, rectangleSize.x / 2), spawnHeight, Random.Range(-rectangleSize.y / 2, rectangleSize.y / 2));
 
         // Instantiate the obstacle
-        Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
+        Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity, bombHolder.transform);
     }
 }

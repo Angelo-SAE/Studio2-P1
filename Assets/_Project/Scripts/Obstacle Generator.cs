@@ -11,16 +11,17 @@ public class ObstacleGenerator : MonoBehaviour
     public float maxOffset = 10f;
     public float distanceBetweenCubes = 3f;
     public float pipeLength = 100f; // Set this to the length of your pipe
+    private GameObject bombHolder;
 
-    
+
 
     public ProBuilderMesh pipe;
 
     void Start()
     {
         GenerateObstacles();
-        
-        
+        bombHolder = new GameObject("BombHolder");
+
     }
 
     void GenerateObstacles()
@@ -31,7 +32,7 @@ public class ObstacleGenerator : MonoBehaviour
             // Convert local position to world position
             Vector3 worldPosition = transform.TransformPoint(cubePosition);
             // Instantiate the cube at the generated world position
-            Instantiate(cubePrefab, worldPosition, Quaternion.identity, transform);
+            Instantiate(cubePrefab, worldPosition, Quaternion.identity, bombHolder.transform);
         }
     }
 

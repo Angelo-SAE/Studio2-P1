@@ -15,8 +15,11 @@ public class FlipCar : MonoBehaviour
 
     void Update()
     {
-      CheckFlip();
-      CarFlip();
+      if(!TimeTracker.isDead)
+      {
+        CheckFlip();
+        CarFlip();
+      }
     }
 
 
