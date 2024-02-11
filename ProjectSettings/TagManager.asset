@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pipe
+  - Ground
+  - Buildings
+  - Road
+  - Grass
   layers:
   - Default
   - TransparentFX

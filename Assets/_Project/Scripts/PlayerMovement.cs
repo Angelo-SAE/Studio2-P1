@@ -9,9 +9,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float horizontal, vertical, moveSpeed, magnetForce, rotationSpeed, highVel;
     [Header("Car Tings")]
     [SerializeField] private float BLANK;
-    [SerializeField] private float motorTorque, brakeTorque, maxSpeed, steeringRange, steeringRangeAtMaxSpeed;
+    [SerializeField] private float motorTorque, brakeTorque, maxSpeed, steeringRange, steeringRangeAtMaxSpeed, grassMaxSpeed;
 
-    WheelControls[] wheels;
+    private bool isGrass;
+    private WheelControls[] wheels;
 
 
     void Start()
@@ -24,8 +25,26 @@ public class PlayerMovement : MonoBehaviour
     {
       if(!TimeTracker.isDead)
       {
-        Movement();
         MagnetForce();
+        Movement();
+      }
+    }
+
+    private void MagnetForce()
+    {
+      RaycastHit hit;
+      isGrass = false;
+      foreach(var wheel in wheels)
+      {
+        if(Physics.Raycast(wheel.gameObject.transform.position, -wheel.gameObject.transform.up, 5f))
+        {
+          Physics.Raycast(wheel.gameObject.transform.position, -wheel.gameObject.transform.up, out hit);
+          if(hit.transform.gameObject.CompareTag("Grass"))
+          {
+            isGrass = true;
+          }
+          rb.AddForce((hit.point - wheel.gameObject.transform.position) * magnetForce, ForceMode.Force);
+        }
       }
     }
 
@@ -33,7 +52,11 @@ public class PlayerMovement : MonoBehaviour
     {
       horizontal = Input.GetAxis("Horizontal");
       vertical = Input.GetAxis("Vertical");
-
+      float holdMaxSpeed = maxSpeed;
+      if(isGrass)
+      {
+        maxSpeed = grassMaxSpeed;
+      }
       //need to look into more
       float forwardSpeed = Vector3.Dot(transform.forward, rb.velocity);
       float speedFactor = Mathf.InverseLerp(0, maxSpeed, Mathf.Abs(forwardSpeed));
@@ -66,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
           wheel.wheelCollider.brakeTorque = brakeTorque * 1;
         }
       }
+      maxSpeed = holdMaxSpeed;
     }
 
     //private void Movement()
@@ -84,17 +108,5 @@ public class PlayerMovement : MonoBehaviour
     //  }
     //}
 
-    private void MagnetForce()
-    {
-      RaycastHit hit;
-      foreach(var wheel in wheels)
-      {
-        if(Physics.Raycast(wheel.gameObject.transform.position, -wheel.gameObject.transform.up, 5f))
-        {
-          Physics.Raycast(wheel.gameObject.transform.position, -wheel.gameObject.transform.up, out hit);
-          rb.AddForce((hit.point - wheel.gameObject.transform.position) * magnetForce, ForceMode.Force);
-        }
-      }
 
-    }
 }

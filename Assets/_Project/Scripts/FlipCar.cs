@@ -38,9 +38,7 @@ public class FlipCar : MonoBehaviour
       if(Input.GetButtonDown("Flip") && canFlip)
       {
         transform.position = new Vector3(transform.position.x, transform.position.y + 5f, transform.position.z);
-        var carFront = transform.forward;
-        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-        transform.rotation = Quaternion.LookRotation(carFront);
+        transform.rotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
         rb.freezeRotation = true;
         rb.freezeRotation = false;
         rb.constraints = RigidbodyConstraints.FreezePosition;

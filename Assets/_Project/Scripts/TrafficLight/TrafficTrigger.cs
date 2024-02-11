@@ -13,12 +13,10 @@ public class TrafficTrigger : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        
+
         if (other.CompareTag("Player") && trafficLightManager.currentState == LightState.Red)
         {
-            //insert player punishment logic (flat time deduction or % deduction)
-            //consider adding logic that prevents the player from getting penalised multiple times from one red light instance
-
+            TimeTracker.currentTime += 10f;
             Debug.Log("You ran a red light!");
         }
     }

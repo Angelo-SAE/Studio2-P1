@@ -1036,9 +1036,9 @@ GameObject:
   - component: {fileID: 143700847}
   - component: {fileID: 143700846}
   - component: {fileID: 143700845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road (7)
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1141,7 +1141,7 @@ GameObject:
   - component: {fileID: 153520869}
   - component: {fileID: 153520868}
   - component: {fileID: 153520867}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Parking lot inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1863,9 +1863,9 @@ GameObject:
   - component: {fileID: 337458346}
   - component: {fileID: 337458345}
   - component: {fileID: 337458344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road (5)
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2352,9 +2352,9 @@ GameObject:
   - component: {fileID: 390299519}
   - component: {fileID: 390299518}
   - component: {fileID: 390299517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road (4)
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3835,9 +3835,9 @@ GameObject:
   - component: {fileID: 669043384}
   - component: {fileID: 669043383}
   - component: {fileID: 669043382}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grass
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3940,9 +3940,9 @@ GameObject:
   - component: {fileID: 688155033}
   - component: {fileID: 688155032}
   - component: {fileID: 688155031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road (6)
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5141,6 +5141,7 @@ MonoBehaviour:
   maxSpeed: 35
   steeringRange: 30
   steeringRangeAtMaxSpeed: 30
+  grassMaxSpeed: 20
 --- !u!65 &981880267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6015,9 +6016,9 @@ GameObject:
   - component: {fileID: 1087043154}
   - component: {fileID: 1087043153}
   - component: {fileID: 1087043152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Parking lot outer
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6336,7 +6337,7 @@ GameObject:
   - component: {fileID: 1204282431}
   m_Layer: 0
   m_Name: Buildings
-  m_TagString: Untagged
+  m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7688,9 +7689,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1486980679}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Roads
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8581,7 +8582,7 @@ GameObject:
   - component: {fileID: 1714378699}
   - component: {fileID: 1714378698}
   - component: {fileID: 1714378701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Roundabout Inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9914,9 +9915,9 @@ GameObject:
   - component: {fileID: 1940340823}
   - component: {fileID: 1940340822}
   - component: {fileID: 1940340821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road (2)
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10073,7 +10074,7 @@ GameObject:
   - component: {fileID: 1952655571}
   - component: {fileID: 1952655570}
   - component: {fileID: 1952655569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Icecream Hub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10626,9 +10627,9 @@ GameObject:
   - component: {fileID: 2045101943}
   - component: {fileID: 2045101942}
   - component: {fileID: 2045101941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road (1)
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10731,9 +10732,9 @@ GameObject:
   - component: {fileID: 2055931920}
   - component: {fileID: 2055931919}
   - component: {fileID: 2055931918}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10899,9 +10900,9 @@ GameObject:
   - component: {fileID: 2109948896}
   - component: {fileID: 2109948895}
   - component: {fileID: 2109948898}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Roundabout Outer
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
