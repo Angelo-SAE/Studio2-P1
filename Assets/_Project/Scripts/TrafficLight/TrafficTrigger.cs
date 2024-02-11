@@ -19,5 +19,10 @@ public class TrafficTrigger : MonoBehaviour
             TimeTracker.currentTime += 10f;
             Debug.Log("You ran a red light!");
         }
+        if (other.CompareTag("Player") && trafficLightManager.currentState == LightState.Green)
+        {
+            TimeTracker.currentTime -= 5f;
+            Debug.Log("You obeyed the law");
+        }
     }
 }
