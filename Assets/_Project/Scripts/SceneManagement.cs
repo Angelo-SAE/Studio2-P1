@@ -7,6 +7,7 @@ public class SceneManagement : MonoBehaviour
 {
   public void LoadScene(string scene)
   {
+    PauseMenu.UnPauseGame();
     SceneManager.LoadScene(scene);
   }
 

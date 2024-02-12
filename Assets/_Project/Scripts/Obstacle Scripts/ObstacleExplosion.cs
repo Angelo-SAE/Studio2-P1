@@ -13,6 +13,7 @@ public class ObstacleExplosion : MonoBehaviour
     private bool hasExploded = false;
 
     private Rigidbody rb;
+    [SerializeField] private GameObject explosionAudio;
 
     void Start()
     {
@@ -49,7 +50,7 @@ public class ObstacleExplosion : MonoBehaviour
                 Debug.Log("EXPLOSION");
             }
         }
-
+        Instantiate(explosionAudio, transform.position, transform.rotation);
         // Optionally destroy the obstacle after exploding
         Destroy(gameObject);
     }

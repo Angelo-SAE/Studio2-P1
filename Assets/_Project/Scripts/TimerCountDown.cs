@@ -7,11 +7,18 @@ public class TimerCountDown : MonoBehaviour
 {
 
     [SerializeField] private float timerSpeed, time, increaseAmount;
+    private AudioSource timerTick;
+
+    void Start()
+    {
+      timerTick = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
         Counter();
         SetTimer();
+        TimerAudioSpeed();
     }
 
     private void Counter()
@@ -31,6 +38,19 @@ public class TimerCountDown : MonoBehaviour
     private void SetTimer()
     {
       GetComponent<Image>().fillAmount = TimeTracker.currentTime/100f;
+    }
+
+    private void TimerAudioSpeed()
+    {
+      var pitchIncrease = Mathf.Lerp(0f,0.2f,TimeTracker.currentTime/100);
+      timerTick.pitch = pitchIncrease + (IceCream.iceCreamCount/50f) + 1;
+
+      if(PauseMenu.paused)
+      {
+        timerTick.mute = true;
+      } else {
+        timerTick.mute = false;
+      }
     }
 
     public void Restart()

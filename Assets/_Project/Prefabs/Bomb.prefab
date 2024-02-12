@@ -101,6 +101,7 @@ MonoBehaviour:
   explosionRadius: 25
   minDelay: 2
   maxDelay: 2.5
+  explosionAudio: {fileID: 3751775760786402848, guid: e4f9ec6aa85019a4d892e654247c9c0f, type: 3}
 --- !u!1 &2375484650633124902
 GameObject:
   m_ObjectHideFlags: 0
