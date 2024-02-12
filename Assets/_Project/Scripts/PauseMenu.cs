@@ -16,11 +16,11 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-      if(Input.GetButtonDown("Pause") && !paused)
+      if(Input.GetButtonDown("Pause") && !paused && !TimeTracker.isDead)
       {
         PauseGame();
         pauseMenu.SetActive(true);
-      } else if(Input.GetButtonDown("Pause") && paused)
+      } else if(Input.GetButtonDown("Pause") && paused && !TimeTracker.isDead)
       {
         UnPauseGame();
         pauseMenu.SetActive(false);

@@ -32,6 +32,8 @@ public class TimerCountDown : MonoBehaviour
       if(TimeTracker.currentTime >= 100f)
       {
         TimeTracker.isDead = true;
+        timerTick.mute = true;
+        PauseMenu.PauseGame();
       }
     }
 
@@ -59,6 +61,7 @@ public class TimerCountDown : MonoBehaviour
       TimeTracker.isDead = false;
       IceCream.iceCreamCount = 0;
       IceCream.hasIceCream = false;
+      timerTick.mute = false;
     }
 
 }
